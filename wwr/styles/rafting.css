@@ -114,12 +114,6 @@ article {
     margin-left: 16px;
 }
 
-/* Hide heading required by auto grader
-.visually-hidden {
-    position: absolute;
-    left: -9999px;
-} */
-
 section {
     margin: 32px 16px;
 }
@@ -130,6 +124,10 @@ p {
 
 footer {
     text-align: left;
+}
+
+footer nav {
+    margin: 2px
 }
 
 .socialmedia img {
