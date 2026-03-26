@@ -6,8 +6,12 @@ body {
 .flex-container {
     border: 3px dashed darkcyan;
     background-color: lightyellow;
+
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .flex-item {
