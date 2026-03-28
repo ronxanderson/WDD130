@@ -41,11 +41,6 @@
    TYPOGRAPHY
 --------------------------*/
 
-body {
-    font-family: var(--body-font);
-    color: var(--dark-gray-color);
-}
-
 h1,
 h2 {
     font-family: var(--heading-font);
@@ -65,6 +60,8 @@ body {
     max-width: var(--max-width);
     margin: 0 auto;
     /* auto centers each element horizontally)*/
+    font-family: var(--body-font);
+    color: var(--dark-gray-color)
 }
 
 p,
@@ -90,7 +87,8 @@ header {
 }
 
 header img {
-    width: 120px;
+    width: 100px;
+    margin: .8rem;
 }
 
 /* styles the <nav > box */
@@ -128,7 +126,7 @@ header nav {
 /* -------------------------
    FOOTER
 --------------------------*/
-* footer {
+footer {
     background-color: var(--primary-color);
     color: var(--secondary-color);
 
@@ -157,6 +155,10 @@ footer nav {
     justify-self: end;
     display: flex;
     gap: .5rem;
+}
+
+.socialmedia a {
+    text-decoration: none;
 }
 
 /* social media icons */
