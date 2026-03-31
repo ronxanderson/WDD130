@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD130 HTML Form</title>
+    <meta name="author" content="Ron Anderson">
+    <meta name="description" content="Author learns to create a web form">
+    <link rel="stylesheet" href="styles/quiz.css">
+</head>
+
+<body>
+    <header>
+        <h1>Basic HTML & CSS Quiz</h1>
+    </header>
+
+    <main>
+        <form>
+            <label for="q1">1. What does the acronym CSS stand for?</label>
+            <input type="text" id="q1" name="q1" required>
+
+            <label for="q2">2. How are id and class attributes selected in CSS?</label>
+            <input textarea id="q2" name="q2" required>
+
+            <label for="q3">3. Which of the following is a valid CSS comment?</label>
+            <select id="q3" name="q3" required>
+                <option value="" selected disabled>Choose One ...</option>
+                <option value="q3A">&lt;!-- this is a comment --&gt;</option>
+                <option value="q3B">/*-- this is a comment --*/</option>
+                <option value="q3C">/#-- this is a comment --#/</option>
+            </select>
+
+            <label for="q4">4. What is the bottom margin given this declaration?</label>
+            <div class="q4text">
+                <pre>margin: 10px 5px 15px;</pre>
+            </div><!-- q4text -->
+            <input type="number" id="q4" name="q4">
+            <button type="submit">Submit Quiz</button>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy;2026 | HTML Form - Quiz Activity | Ron Anderson</p>
+    </footer>
+</body>
+
+</html>
