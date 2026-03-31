@@ -101,18 +101,28 @@ button:hover {
 
 .questions {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 0.5rem 1rem;
+    grid-template-columns: 320px auto;
     align-items: center;
+    column-gap: 1rem;
 }
 
 .questions label {
     text-align: right;
 }
 
+.full-width-label {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-top: .7rem;
+}
+
+.full-width-label label {
+    text-align: center;
+}
+
 textarea {
     display: block;
     width: 100%;
     max-width: 500px;
-    margin: 0.5rem auto 0;
+    margin: 0 auto;
 }
