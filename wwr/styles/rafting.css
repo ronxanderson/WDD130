@@ -336,7 +336,7 @@ button {
     border: none;
 }
 
-/* Contact page gallery images were narrower than the shared gallery */
+/* Contact page gallery images are narrower than the shared gallery */
 .bottom .gallery img {
     width: 60%;
 }
