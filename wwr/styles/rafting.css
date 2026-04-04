@@ -244,7 +244,7 @@ section,
 --------------------------*/
 .top p {
     text-align: center;
-    margin: var(--space-sm);
+    margin: var(--space-xs);
     padding: 0;
 }
 
