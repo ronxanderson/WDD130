@@ -46,7 +46,7 @@
     /* 16px */
     --space-xl: 1.5rem;
     /* 24px */
-    /* unifying the spacing everywhere */
+    /* unified spacing units and spacing everywhere */
 }
 
 /* -------------------------
@@ -56,6 +56,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* include padding and border inside an element’s declared width and height */
 }
 
 /* -------------------------
