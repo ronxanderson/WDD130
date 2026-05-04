@@ -104,59 +104,57 @@ header {
 }
 
 header img {
-    /* logo */
+    /* logo image placed in the first (left) grid cell */
     width: 6.25rem;
     /* sets the logo width; height scales automatically */
     margin: var(--space-md);
-    /* add equal space around logo */
+    /* adds space outside the logo on all sides */
 }
 
 header nav {
-    /* nav container */
-    justify-self: center;
-    /* centers the nav horizontally within its grid cell */
+    /* targets the header nav element (in the 2nd (right) grid cell) */
     width: 100%;
-    /* allows the nav to fill the width of its grid cell */
+    /* lets the nav stretch to fill available space, up to its max-width */
     max-width: 25rem;
     /* limits the nav bar width to 25rem */
+    justify-self: center;
+    /* centers the capped width within its grid cell */
 }
 
 .header-navigation {
-    /* nav list */
+    /* targets the <ul> inside the header nav */
     display: flex;
-    /* lays out the list items in a row in the 2nd (right) grid cell*/
+    /* lays out the list items in a row in header nav container */
     list-style: none;
     /* removes default bullets */
     padding: 0;
     margin: 0;
     /* remove default list spacing */
-    gap: 0;
-    /* gap between buttons */
 }
 
 .header-navigation li {
+    /* each <li> is a flex item inside the navigation bar */
     flex: 1;
-    /* makes each list element share the row width equally
-        affects width only, not height */
 }
 
 .header-navigation a {
-    /* nav links styled as buttons */
+    /* link inside each list item */
     display: block;
-    /* allows the list element to have box model properties (width, padding, border, margin) 
-    makes the anchor (<a>) fill the <li >, so the whole clickable area expands to fill the box. */
+    /* allows the link to expand and fill the entire <li>,
+       making the whole area clickable */
     text-align: center;
-    /* centers the link's text in the button */
+    /* centers the text inside the link */
     white-space: nowrap;
-    /* prevents link's text in the button from wrapping */
+    /* prevents text from wrapping to a new line */
     padding: var(--space-sm);
-    /* adds space around each link's text
-    along with font height and border thickness determines the height of the button */
+    /* controls button size along with font and border */
     text-decoration: none;
-    /* remove underline from link's text */
+    /* removes underline */
     color: var(--accent1-color);
     border: 1px solid var(--border-color);
     background-color: var(--surface-color);
+
+    outline: 2px solid red;
 }
 
 /* -------------------------
@@ -259,20 +257,23 @@ footer p {
 input[type="text"],
 input[type="email"],
 textarea {
+    /* gives form fields consistent borders, rounded corners, and inherited font styles */
     border: 1px solid var(--border-color);
     border-radius: var(--radius);
     font: inherit;
-    /* ensures form fields use the same font styles (family, size, weight, etc.) as the rest of the page */
+
 }
 
 input[type="text"],
 input[type="email"] {
+    /* makes text and email inputs fill their container with consistent height and horizontal padding */
     width: 100%;
     height: 2.5rem;
     padding: 0 var(--space-sm);
 }
 
 textarea {
+    /* adds consistent inner spacing inside the text area */
     padding: var(--space-sm);
 }
 
@@ -298,8 +299,8 @@ textarea {
 }
 
 .gallery figcaption {
-    text-align: justify;
-    /* justify the figure captions */
+    text-align: center;
+    /* center the figure captions */
 }
 
 .gallery img {
@@ -454,6 +455,31 @@ section,
 }
 
 /* -------------------------
+   INDEX PAGE
+--------------------------*/
+.form-heading {
+    /* centers and styles the newsletter form heading on the home page */
+    text-align: center;
+    font-family: var(--heading-font);
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 0.03rem;
+    /* add spacing between letters */
+    margin-bottom: var(--space-md);
+    /* separates it from the form fields */
+}
+
+.home-form-double-col {
+    /* two-column form newsletter form layout on the the header page with consistent spacing */
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    align-items: center;
+    row-gap: var(--space-md);
+    column-gap: var(--space-lg);
+    /* grid columns are layout tracks, not visual elements seen using outline */
+}
+
+/* -------------------------
    ABOUT PAGE
 --------------------------*/
 .hero article {
@@ -490,6 +516,93 @@ section,
     /* justifies the text in the cell */
     gap: var(--space-md);
     /* adds horizontal spacing between columns */
+}
+
+/* -------------------------
+   TRIPS PAGE
+--------------------------*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* does not remover borders, but merges adjacent borders into one */
+    border: 2px solid var(--primary-color);
+    /* adds a border around the outside of the table */
+    margin: var(--space-md) 0;
+    /* adds vertical space above and below the table */
+    background-color: var(--surface-color);
+    table-layout: auto;
+    font-size: 0.95rem;
+}
+
+thead tr:first-child th {
+    background-color: var(--header-bar-background-color);
+    color: var(--header-bar-text-color);
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    /* match h2 font size */
+    font-weight: normal;
+    /* instead of the bold default for table headings */
+    text-align: center;
+    padding: var(--space-md);
+    border: 1px solid var(--primary-color);
+}
+
+thead tr:nth-child(2) th {
+    background-color: var(--header-bar-background-color);
+    color: var(--header-bar-text-color);
+    padding: var(--space-md);
+    text-align: center;
+    border: 1px solid var(--primary-color);
+    font-family: var(--body-font);
+    font-weight: normal;
+    /* instead of the bold default for table headings */
+}
+
+th,
+td {
+    border: 1px solid var(--primary-color);
+    padding: var(--space-md);
+    vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--surface-muted-color);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--surface-color);
+}
+
+td:nth-child(1),
+th:nth-child(1) {
+    width: 34%;
+    text-align: left;
+}
+
+td:nth-child(2),
+th:nth-child(2) {
+    width: 14%;
+    text-align: center;
+}
+
+td:nth-child(3),
+th:nth-child(3) {
+    width: 24%;
+    text-align: center;
+}
+
+td:nth-child(4),
+th:nth-child(4) {
+    width: 14%;
+    text-align: center;
+}
+
+td:nth-child(5),
+th:nth-child(5) {
+    width: 14%;
+    text-align: right;
+    white-space: nowrap;
 }
 
 /* -------------------------
@@ -589,121 +702,4 @@ section,
     margin-top: var(--space-md);
     /* add top spacing to separate this row from the textarea above
     so that it matches the spacing in the form above */
-}
-
-/* -------------------------
-   INDEX PAGE
---------------------------*/
-.form-heading {
-    /* styles the newsletter form heading on the home page */
-    text-align: center;
-    font-family: var(--heading-font);
-    font-size: 1.1rem;
-    font-weight: bold;
-    letter-spacing: 0.03rem;
-    /* add spacing between letters */
-    margin-bottom: var(--space-md);
-    /* separates it from the form fields */
-}
-
-.home-newsletter-form legend {
-    padding-bottom: var(--space-md);
-    /* adds spacing between the legend and name entry textarea */
-    text-align: center;
-}
-
-.home-form-double-col {
-    display: grid;
-    grid-template-columns: 6rem 1fr;
-    align-items: center;
-    row-gap: var(--space-md);
-    column-gap: var(--space-lg);
-    /* grid columns are layout tracks, not visual elements seen using outline */
-}
-
-/* -------------------------
-   TRIPS PAGE
---------------------------*/
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    /* does not remover borders, but merges adjacent borders into one */
-    border: 2px solid var(--primary-color);
-    /* adds a border around the outside of the table */
-    margin: var(--space-md) 0;
-    /* adds vertical space above and below the table */
-    background-color: var(--surface-color);
-    table-layout: auto;
-    font-size: 0.95rem;
-}
-
-thead tr:first-child th {
-    background-color: var(--header-bar-background-color);
-    color: var(--header-bar-text-color);
-    font-family: var(--heading-font);
-    font-size: 1.5rem;
-    /* match h2 font size */
-    font-weight: normal;
-    /* instead of the bold default for table headings */
-    text-align: center;
-    padding: var(--space-md);
-    border: 1px solid var(--primary-color);
-}
-
-thead tr:nth-child(2) th {
-    background-color: var(--header-bar-background-color);
-    color: var(--header-bar-text-color);
-    padding: var(--space-md);
-    text-align: center;
-    border: 1px solid var(--primary-color);
-    font-family: var(--body-font);
-    font-weight: normal;
-    /* instead of the bold default for table headings */
-}
-
-th,
-td {
-    border: 1px solid var(--primary-color);
-    padding: var(--space-md);
-    vertical-align: top;
-}
-
-tbody tr:nth-child(even) {
-    background-color: var(--surface-muted-color);
-}
-
-tbody tr:nth-child(odd) {
-    background-color: var(--surface-color);
-}
-
-td:nth-child(1),
-th:nth-child(1) {
-    width: 34%;
-    text-align: left;
-}
-
-td:nth-child(2),
-th:nth-child(2) {
-    width: 14%;
-    text-align: center;
-}
-
-td:nth-child(3),
-th:nth-child(3) {
-    width: 24%;
-    text-align: center;
-}
-
-td:nth-child(4),
-th:nth-child(4) {
-    width: 14%;
-    text-align: center;
-}
-
-td:nth-child(5),
-th:nth-child(5) {
-    width: 14%;
-    text-align: right;
-    white-space: nowrap;
 }
